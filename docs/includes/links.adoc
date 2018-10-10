@@ -1,0 +1,7 @@
+
+=== Useful links, RSS feeds and security news
+
+- https://access.redhat.com/security/security-updates/#/security-advisories[RedHat security advisories]
+- http://www.feedbucket.com/?src=https%3A%2F%2Fpivotal.io%2Fsecurity%2Frss[Pivotal security RSS feed]
+ifdef::backend-html5[- link:./index.pdf[PFD format]]
+- link:{github-url}[GitHub repo]

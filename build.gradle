@@ -1,0 +1,39 @@
+buildscript {
+  ext {
+    javaVersion = JavaVersion.VERSION_1_8
+    adocOutputDir = project.file("$buildDir/asciidoc")
+  }
+
+  dependencies {
+    classpath('org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.16')
+    // asciidoc conversion will fail with jruby 9.2.0.0
+    classpath('org.jruby:jruby-complete:9.1.13.0')
+  }
+}
+
+plugins {
+  id 'com.gradle.build-scan' version '1.16'
+  id 'org.asciidoctor.convert' version '1.5.8.1' apply false
+  id 'com.avast.gradle.docker-compose' version '0.7.1' apply false
+  id 'com.github.ben-manes.versions' version '0.20.0' // ./gradlew dependencyUpdates -Drevision=release --parallel
+}
+
+allprojects {
+  version = '0.0.3'
+  group = 'com.github.daggerok'
+  description = 'Gradle windows unstable issue'
+}
+
+wrapper {
+  gradleVersion = '4.10.2'
+  distributionType = 'BIN'
+}
+
+apply from: "$rootDir/gradle/ide.gradle"
+apply from: "$rootDir/gradle/clean.gradle"
+apply from: "$rootDir/gradle/repositories.gradle"
+apply from: "$rootDir/gradle/documentation.gradle"
+apply from: "$rootDir/gradle/docker-compose.gradle"
+apply from: "$rootDir/gradle/build-scan.gradle"
+
+defaultTasks 'clean', 'documentation'

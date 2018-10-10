@@ -1,0 +1,14 @@
+# ./gradlew composeUp
+# curl http://127.0.0.1:8001/
+version: '2.1'
+services:
+  nginx:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile
+    networks: [backing-services]
+    ports: ['8001:80']
+    restart: unless-stopped
+networks:
+  backing-services:
+    driver: bridge

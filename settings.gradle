@@ -1,0 +1,2 @@
+rootProject.name = 'gradle-windows-issue'
+enableFeaturePreview 'STABLE_PUBLISHING'

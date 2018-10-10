@@ -1,0 +1,22 @@
+= {project-name} ({project-version})
+Me <ololo@trololo.com>
+{docdatetime}
+:doctype: book
+:toc: left
+:toclevels: 4
+:source-highlighter: prettify
+:icons: font
+:hide-uri-scheme:
+:revnumber: {project-version}
+:example-caption!:
+
+[[logo]]
+ifdef::backend-html5[image::./favicon.png[]]
+
+__{project-description}__
+
+== Introduction
+include::../README.adoc[tags=content]
+
+// And finnaly any usefull links / resources...
+include::./includes/links.adoc[]

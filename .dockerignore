@@ -1,0 +1,10 @@
+.gradle/
+docs/
+gradle/
+gradle.*
+gradlew*
+build/
+.travis.yml
+build.gradle
+README.adoc
+settings.gradle
